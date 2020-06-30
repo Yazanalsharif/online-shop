@@ -1,0 +1,26 @@
+<%-include('parts/header.ejs'); %>
+<%-include('parts/navbar.ejs') %>
+<div class="container text-center">
+     <form action="/sign-up" method="POST" class="edit-form">
+        <h3>create Account</h3>
+     <input type="email"   class="form-control" placeholder="Email" name="email"></input> 
+     <input type="text"   class="form-control" placeholder="UserName" name="userName"></input>
+     <input type="password"   class="form-control" placeholder="Password" name="password"></input> 
+     <input type="password"   class="form-control" placeholder="Confirem password" name="confiremPassword"></input>
+     <input type="submit" value="create account"  class="btn btn-primary"/>
+    </form>
+    <p>
+      if you already have account  <a href="/log-in">log-in</a>
+    </p>
+    <%if(errorS.length > 0) {%>
+      <p class="alert alert-danger"><%= errorS %></p>
+      <%}%>
+
+    <%if(error) {%>
+      <% for (var i = 0; i < error.length; i++) {%>
+      <p class="alert alert-danger"><%= error[i].msg%></p>
+      <%}%>
+
+      <%}%>
+</div>
+<%-include('parts/footer.ejs') %>

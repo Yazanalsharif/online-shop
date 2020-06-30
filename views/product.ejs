@@ -1,0 +1,29 @@
+<%- include('parts/header.ejs') %>
+<%- include('parts/navbar.ejs') %>
+<% if (product === null) { %> <%# null for object like array and objects and undefined to normal variable %>
+    <% console.log(product); %>
+    
+    <p class="alert alert-danger"> 
+       no product here please rematching the id 
+    </p>
+    <% } else { %>
+        <div class="container">
+            <div class="row">
+                <div class="col col-12 col-md-6">
+                    <img  src="/<%=product.image%>"> <%# learn why we put the / in source %>
+                    <form action="/cart" method="POST">
+                        <input type="number" name="amount" class="form-control">
+                        <input type="submit" value="add to cart" class="btn btn-primary">
+                    </form>
+                </div>
+                <div class="col col-12 col-md-6">
+                    <h3><%= product.name%></h3>
+                   <h5><%=product.price%></h5>
+                   <p><%= product.descraption%></p>
+                   </h5>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+<%- include('parts/footer.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('parts/header.ejs'); %>
+<%- include('parts/navbar.ejs'); %>
+<% if (products.length === 0) {%>
+  <div class="alert alert-danger">no products here</div>
+  <% } else  {%>
+    
+<div class="container margin-top">
+  <form action="/" method="GET">
+   <label for="exampleFormControlSelect1">filter: <%=category%></label>
+     <select class="form-control" id="exampleFormControlSelect1" name="category">
+       <option value="all">all</option>
+       <option value="phones">phones</option>
+       <option value="t-shirts">t-shirts</option>
+       <option value="lap-tops">lap-tops</option>
+       <option value="machines">machines</option>
+     </select>
+     <input type="submit" class="btn btn-primary margin-top"  value="filter"/>
+ </form>
+ </div>
+ <div class="container margin-top">
+     <div class="row">  
+ <% for (let i = 0; i < products.length; i++) {%> 
+     <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+     <div class="card" style="width: 18rem;">
+         <img src="<%= products [i].image%>" class="card-img-top" alt="..." height="400">
+         <div class="card-body">
+           <h5 class="card-title"><a href="product/<%=products[i]._id%>"><%= products [i].name%></a></h5>
+           <p class="card-text">price: <%= products [i].price%>$</p>
+           <a href="#" class="btn btn-primary">add to card</a>
+         </div>
+       
+       </div>
+     </div>
+  
+  <% } %> 
+ 
+ <% } %>
+<%- include('parts/footer.ejs'); %>
+
+    
+

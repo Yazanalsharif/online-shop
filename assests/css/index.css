@@ -1,0 +1,36 @@
+body{
+    height: 1000px;
+}
+.nav-item{
+    padding-left: 10px;
+}
+/********************************* to navbar ****************************/
+.address {
+    color:#222;
+    text-align: center;
+    font-family:Arial;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+
+
+.margin-top{
+    margin-top: 15px;
+}
+
+/******************************** to style the sign-up ejs *********************/ 
+.edit-form{
+    margin-top: 20px;
+}
+.edit-form input {
+  
+    margin-bottom: 10px;
+
+
+}
+/**************************** to style the log-in page **************************/
+.form-log{
+    margin-top: 30px;
+}
+
